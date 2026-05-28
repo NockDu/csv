@@ -19,7 +19,7 @@ RF: Random Forest
 
 /data
     /final
-        500_가중치.csv: RF 학습용 단어장(학습에 사용하지 않았음)
+        500_가중치.csv: RF 학습용 단어장
         test_phone.csv: 보이스피싱 테스트 데이터셋
         test_sms.csv: 스미싱 테스트 데이터셋
         train_phone.csv: 보이스피싱 학습 데이터셋
