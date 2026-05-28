@@ -1,8 +1,8 @@
-call: 보이스피싱 탐지 모델
-sms: 스미싱 탐지 모델
-KE: KoELECTRA
-RF: Random Forest
-
+call: 보이스피싱 탐지 모델  
+sms: 스미싱 탐지 모델  
+KE: KoELECTRA  
+RF: Random Forest  
+```
 /code
     /call
         augment_phishing_data.py: 피싱 데이터 증강 코드
@@ -82,3 +82,4 @@ RF: Random Forest
         sms_training.png
 
     test_results_text.txt: test.py 결과 모음
+```
