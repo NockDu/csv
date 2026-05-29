@@ -1,7 +1,12 @@
 call: 보이스피싱 탐지 모델  
 sms: 스미싱 탐지 모델  
 KE: KoELECTRA  
+KB: KoBERT  
 RF: Random Forest  
+SVM: Support Vector Machine  
+NB: Naive Bayes  
+LR: Logistic Regression
+
 ```
 /code
     /call
@@ -37,41 +42,107 @@ RF: Random Forest
             chat.csv: 정상 데이터
 
 /model
-    /call(KE)
-        /call_koelectra_model: KoELECTRA 보이스피싱 탐지 모델
-            config.json
-            model.safetensors
-            tokenizer.json
-            tokenizer_config.json
-            training_args.bin
-        call_koelectra_detaile.PNG: Accuracy 보고서
-        call_koelectra_performance.png: Confusion Matrix & ROC Curve
-        call_koelectra_training.PNG: 학습 경과
+    /call
+        /KoBERT(call)
+            /kobert_call_model: KoBERT 보이스피싱 탐지 모델
+                config.json
+                model.safetensors
+                tokenizer.json
+                tokenizer_config.json
+                training_args.bin
+            kobert_call_detaile.PNG: Accuracy 보고서
+            kobert_call_performance.png: Confusion Matrix & ROC Curve
+            kobert_call_training.PNG: 학습 경과
 
-    /call(RF)
-        /call_randomforest_model: Random Forest 보이스피싱 탐지 모델
-            call_phishing_model.pkl
-            call_tfidf_vectorizer.pkl
-        call_randomforest_detaile.PNG: Accuracy 보고서
-        call_randomforest_performance.png: Confusion Matrix & ROC Curve
+        /KoELECTRA(call)
+            /koelectra_call_model: KoELECTRA 보이스피싱 탐지 모델
+                config.json
+                model.safetensors
+                tokenizer.json
+                tokenizer_config.json
+                training_args.bin
+            koelectra_call_detaile.PNG: Accuracy 보고서
+            koelectra_call_performance.png: Confusion Matrix & ROC Curve
+            koelectra_call_training.PNG: 학습 경과
 
-    /sms(KE)
-        /sms_koelectra_model: KoELECTRA 스미싱 탐지 모델
-            config.json
-            model.safetensors
-            tokenizer.json
-            tokenizer_config.json
-            training_args.bin
-        sms_koelectra_detaile.PNG: Accuracy 보고서
-        sms_koelectra_performance.png: Confusion Matrix & ROC Curve
-        sms_koelectra_training.PNG: 학습 경과
+        /Logistic Regression(call)
+            /logisticregression_call_model: Logistic Regression 보이스피싱 탐지 모델
+                logisticregression_call_phishing_model.pkl
+                logisticregression_call_tfidf_vectorizer.pkl
+            logisticregression_call_detaile.PNG: Accuracy 보고서
+            logisticregression_call_performance.png: Confusion Matrix & ROC Curve
 
-    /sms(RF)
-        /sms_randomforest_model: Random Forest 스미싱 탐지 모델
-            sms_phishing_model.pkl
-            sms_tfidf_vectorizer.pkl
-        sms_randomforest_detaile.PNG: Accuracy 보고서
-        sms_randomforest_performance.png: Confusion Matrix & ROC Curve
+        /Naive Bayes(call)
+            /naivebayes_call_model: Naive Bayes 보이스피싱 탐지 모델
+                naivebayes_call_phishing_model.pkl
+                naivebayes_call_tfidf_vectorizer.pkl
+            naivebayes_call_detaile.PNG: Accuracy 보고서
+            naivebayes_call_performance.png: Confusion Matrix & ROC Curve
+
+        /Random Forest(call)
+            /randomforest_call_model: Random Forest 보이스피싱 탐지 모델
+                randomforest_call_phishing_model.pkl
+                randomforest_call_tfidf_vectorizer.pkl
+            randomforest_call_detaile.PNG: Accuracy 보고서
+            randomforest_call_performance.png: Confusion Matrix & ROC Curve
+
+        /SVM(call)
+            /svm_call_model: Random Forest 보이스피싱 탐지 모델
+                svm_call_phishing_model.pkl
+                svm_call_tfidf_vectorizer.pkl
+            svm_call_detaile.PNG: Accuracy 보고서
+            svm_call_performance.png: Confusion Matrix & ROC Curve
+
+    /sms
+        /KoBERT(sms)
+            /kobert_sms_model: KoBERT 스미싱 탐지 모델
+                config.json
+                model.safetensors
+                tokenizer.json
+                tokenizer_config.json
+                training_args.bin
+            kobert_sms_detaile.PNG: Accuracy 보고서
+            kobert_sms_performance.png: Confusion Matrix & ROC Curve
+            kobert_sms_training.PNG: 학습 경과
+
+        /KoELECTRA(sms)
+            /koelectra_sms_model: KoELECTRA 스미싱 탐지 모델
+                config.json
+                model.safetensors
+                tokenizer.json
+                tokenizer_config.json
+                training_args.bin
+            koelectra_sms_detaile.PNG: Accuracy 보고서
+            koelectra_sms_performance.png: Confusion Matrix & ROC Curve
+            koelectra_sms_training.PNG: 학습 경과
+
+        /Logistic Regression(sms)
+            /logisticregression_sms_model: Logistic Regression 스미싱 탐지 모델
+                logisticregression_sms_phishing_model.pkl
+                logisticregression_sms_tfidf_vectorizer.pkl
+            logisticregression_sms_detaile.PNG: Accuracy 보고서
+            logisticregression_sms_performance.png: Confusion Matrix & ROC Curve
+
+        /Naive Bayes(sms)
+            /naivebayes_sms_model: Naive Bayes 스미싱 탐지 모델
+                naivebayes_sms_phishing_model.pkl
+                naivebayes_sms_tfidf_vectorizer.pkl
+            naivebayes_sms_detaile.PNG: Accuracy 보고서
+            naivebayes_sms_performance.png: Confusion Matrix & ROC Curve
+
+        /Random Forest(sms)
+            /randomforest_sms_model: Random Forest 스미싱 탐지 모델
+                randomforest_sms_phishing_model.pkl
+                randomforest_sms_tfidf_vectorizer.pkl
+            randomforest_sms_detaile.PNG: Accuracy 보고서
+            randomforest_sms_performance.png: Confusion Matrix & ROC Curve
+
+        /SVM(sms)
+            /svm_sms_model: SVM 스미싱 탐지 모델
+                svm_sms_phishing_model.pkl
+                svm_sms_tfidf_vectorizer.pkl
+            svm_sms_detaile.PNG: Accuracy 보고서
+            svm_sms_performance.png: Confusion Matrix & ROC Curve
 
     /test_results(KEPR): 26.05.28 보고용 KE 분석
         call_detaile.png
